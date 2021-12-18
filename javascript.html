@@ -9,27 +9,27 @@
 
     <body>
 
-        <p>What is the magic word?</p>
+        <p>How many fingers am I holding up?</p>
 
-        <p><input type="text" id="magicWord"></p>
-
-        <p><button id="checkMagicWord">Enter</button></p>
+        <p><input type="text" id="guess"> <button id="checkGuess">Guess!</button></p>
 
        <script type="text/javascript">
 
-            document.getElementById("checkMagicWord").onclick = function() {
+            document.getElementById("checkGuess").onclick = function() {
 
-                var magicWordEntered = document.getElementById("magicWord").value;
+                var randomNumber = Math.random();
 
-                var magicWord = "abracadabra";
+                randomNumber = randomNumber * 6;
 
-                if (magicWordEntered == magicWord) {
+                randomNumber = Math.floor(randomNumber);
 
-                    alert("You got it!");               
+                if (document.getElementById("guess").value == randomNumber) {
 
-                } else {
+                    alert("Well done! You got it!");
 
-                    alert("Nope, try again");
+                }   else {
+
+                    alert("Nope! The number was " + randomNumber);
 
                 }
 
