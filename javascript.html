@@ -9,31 +9,21 @@
 
     <body>
 
-        <p>How many fingers am I holding up?</p>
-
-        <p><input type="text" id="guess"> <button id="checkGuess">Guess!</button></p>
+        <div id="tweetDiv"></div>
 
        <script type="text/javascript">
 
-            document.getElementById("checkGuess").onclick = function() {
+            var tweetString = "";
 
-                var randomNumber = Math.random();
+            var tweets = ["Hi everyone!", "I love cornflakes!", "Nighty night :)", "Sweet dreams!"]
 
-                randomNumber = randomNumber * 6;
+            for (var i = 0; i < tweets.length; i++) {
 
-                randomNumber = Math.floor(randomNumber);
-
-                if (document.getElementById("guess").value == randomNumber) {
-
-                    alert("Well done! You got it!");
-
-                }   else {
-
-                    alert("Nope! The number was " + randomNumber);
-
-                }
+                tweetString = tweetString + "<p>" + tweets[i] + "</p>";
 
             }
+
+            document.getElementById("tweetDiv").innerHTML = tweetString;
 
        </script>
              
