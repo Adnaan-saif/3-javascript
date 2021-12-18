@@ -1,32 +1,73 @@
 <html>
 
     <head>
-
-       <title>Javascript</title>
-
-
+        
+        <title>Javascript</title>
+    
     </head>
 
     <body>
+    
+        <p>How many fingers are you holding up?</p>
+        
+        <p>
+            <select id="myNumber">
+                
+                <option>0</option>
+                
+                <option>1</option>
+                
+                <option>2</option>
+                
+                <option>3</option>
+                
+                <option>4</option>
+                
+                <option>5</option>
+            
+            </select>
+            
+            <button id="guess">Guess!</button>
+        
+        </p>
+        
+        <script type="text/javascript">
+            
+            document.getElementById("guess").onclick = function() {
+                
+                var myNumber = document.getElementById("myNumber").value;
+                
+                var gotIt = false;
+                
+                var numberOfGuesses = 1;
+                
+                while (gotIt == false) {
+                
+                    var guess = Math.random();
 
-        <div id="tweetDiv"></div>
+                    guess = guess * 6;
 
-       <script type="text/javascript">
+                    guess = Math.floor(guess);
 
-            var tweetString = "";
+                    if (guess == myNumber) {
+                        
+                        gotIt = true;
 
-            var tweets = ["Hi everyone!", "I love cornflakes!", "Nighty night :)", "Sweet dreams!"]
+                        alert ("Got it! It was a " + guess + ". It took me " + numberOfGuesses + " guesses.");
 
-            for (var i = 0; i < tweets.length; i++) {
+                    } else {
 
-                tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+                        numberOfGuesses++;
 
+                    }
+                
+                }
+                
             }
-
-            document.getElementById("tweetDiv").innerHTML = tweetString;
-
-       </script>
-             
+            
+            
+        </script>
+        
     </body>
 
 </html>
