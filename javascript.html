@@ -8,63 +8,21 @@
 
     <body>
     
-        <p>How many fingers are you holding up?</p>
         
-        <p>
-            <select id="myNumber">
-                
-                <option>0</option>
-                
-                <option>1</option>
-                
-                <option>2</option>
-                
-                <option>3</option>
-                
-                <option>4</option>
-                
-                <option>5</option>
-            
-            </select>
-            
-            <button id="guess">Guess!</button>
-        
-        </p>
         
         <script type="text/javascript">
-            
-            document.getElementById("guess").onclick = function() {
-                
-                var myNumber = document.getElementById("myNumber").value;
-                
-                var gotIt = false;
-                
-                var numberOfGuesses = 1;
-                
-                while (gotIt == false) {
-                
-                    var guess = Math.random();
+        
+            function average(a, b) {
 
-                    guess = guess * 6;
+                return((a + b) / 2);
 
-                    guess = Math.floor(guess);
-
-                    if (guess == myNumber) {
-                        
-                        gotIt = true;
-
-                        alert ("Got it! It was a " + guess + ". It took me " + numberOfGuesses + " guesses.");
-
-                    } else {
-
-                        numberOfGuesses++;
-
-                    }
-                
-                }
-                
             }
-            
+
+            var x = 5;
+            var y = 10;
+
+            alert(average(x, y));
+
             
         </script>
         
